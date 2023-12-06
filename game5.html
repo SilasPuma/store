@@ -1,0 +1,57 @@
+<!-- Save this as game5.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybernetic Battle</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        canvas {
+            border: 2px solid #333;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cybernetic Battle</h1>
+    <p>Engage in intense battles in a cybernetic world full of surprises.</p>
+
+    <!-- Canvas for the game -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Example: Draw a futuristic weapon
+        ctx.fillStyle = '#ff00ff';
+        ctx.fillRect(50, 50, 50, 100);
+
+        // Example: Handle mouse click
+        canvas.addEventListener('click', (event) => {
+            const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+            const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+
+            // Check if the click is within the weapon area
+            if (mouseX >= 50 && mouseX <= 100 && mouseY >= 50 && mouseY <= 150) {
+                alert('You triggered a cybernetic blast!'); // Replace with your game logic
+            }
+        });
+    </script>
+</body>
+</html>
