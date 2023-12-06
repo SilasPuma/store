@@ -1,0 +1,57 @@
+<!-- Save this as game4.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilasPuma Racing</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        canvas {
+            border: 2px solid #333;
+            display: block;
+            margin: 20px auto;
+            cursor: pointer; /* Set cursor to pointer for better user feedback */
+        }
+    </style>
+</head>
+<body>
+    <h1>SilasPuma Racing</h1>
+    <p>Experience the adrenaline rush in this fast-paced racing game.</p>
+
+    <!-- Canvas for the game -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Example: Draw a car
+        const carImage = new Image();
+        carImage.src = 'car_image_url.jpg'; // Replace with the actual URL of your car image
+
+        // Wait for the image to load before drawing
+        carImage.onload = function () {
+            ctx.drawImage(carImage, 50, 50, 100, 50); // Adjust the coordinates and size accordingly
+        };
+
+        // Handle click event
+        canvas.addEventListener('click', () => {
+            window.open('https://www.cars.com', '_blank'); // Open cars.com in a new tab
+        });
+    </script>
+</body>
+</html>
