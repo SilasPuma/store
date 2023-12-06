@@ -1,0 +1,60 @@
+<!-- Save this as game2.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puma's Quest Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        canvas {
+            border: 2px solid #333;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Puma's Quest Game</h1>
+    <p>Join Puma in an epic quest, overcoming challenges and solving puzzles.</p>
+
+    <!-- Canvas for the game -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Example: Draw a circle
+        ctx.fillStyle = '#f00';
+        ctx.beginPath();
+        ctx.arc(150, 150, 50, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Example: Handle mouse click
+        canvas.addEventListener('click', (event) => {
+            const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+            const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+
+            // Check if the click is within the circle
+            const distance = Math.sqrt((mouseX - 150)**2 + (mouseY - 150)**2);
+            if (distance <= 50) {
+                alert("You clicked on Puma's circle!"); // Replace with your game logic
+            }
+        });
+    </script>
+</body>
+</html>
