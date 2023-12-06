@@ -1,0 +1,59 @@
+<!-- Save this as game1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exciting Adventure Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        canvas {
+            border: 2px solid #333;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exciting Adventure Game</h1>
+    <p>Embark on a thrilling adventure with high-paced action and mystery.</p>
+
+    <!-- Canvas for the game -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Simple example: Draw a rectangle
+        ctx.fillStyle = '#00f';
+        ctx.fillRect(50, 50, 100, 100);
+
+        // You'd typically add more complex game logic here
+
+        // Example: Handle mouse click
+        canvas.addEventListener('click', (event) => {
+            const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+            const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+
+            // Check if the click is within the rectangle
+            if (mouseX >= 50 && mouseX <= 150 && mouseY >= 50 && mouseY <= 150) {
+                alert('You clicked on the rectangle!'); // Replace this with your game logic
+            }
+        });
+    </script>
+</body>
+</html>
